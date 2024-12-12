@@ -9,7 +9,7 @@ import {
   Alert,
 } from "react-native";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../my-app/firebaseConfig";
+import { auth } from "./firebaseConfig";
 import { useFonts } from "expo-font";
 
 const SignupScreen = ({ navigation }) => {
@@ -19,7 +19,7 @@ const SignupScreen = ({ navigation }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [fontsLoaded, error] = useFonts({
-    OswaldStencil: require("../my-app/assets/fonts/Oswald-Stencil.ttf"),
+    OswaldStencil: require("./assets/fonts/SpaceMono-Regular.ttf"),
   });
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const SignupScreen = ({ navigation }) => {
   return (
     <ImageBackground
       style={styles.container}
-      source={require("../my-app/assets/img1.png")}
+      source={require("./assets/images/loginpic.jpg")}
     >
       <View style={styles.inputContainer}>
         <TextInput
@@ -119,6 +119,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    width: "100%",
+    height: "100%",
   },
   inputContainer: {
     marginBottom: 10,
